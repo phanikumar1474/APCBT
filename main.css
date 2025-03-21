@@ -1,0 +1,321 @@
+/* Glassmorphism Chatbot UI */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #121212;
+}
+
+.chat-container {
+    width: 350px;
+    height: 500px;
+    background: rgba(35, 21, 76, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chat-header {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bot-message, .user-message {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.bot-message {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #0078FF;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    position: relative; /* Ensure proper positioning */
+    width: 80%;
+}
+
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Styled Send Button */
+.chat-input button {
+    background: linear-gradient(135deg, #0078FF, #221c9d); /* Gradient effect */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 25px; /* More rounded */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 120, 255, 0.3);
+}
+
+/* Hover effect */
+.chat-input button:hover {
+    background: linear-gradient(135deg, #221c9d, #221c9d);
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 6px 12px rgba(0, 120, 255, 0.5);
+}
+/* Styled Logout Button */
+#logout-btn {
+    position: absolute;
+    top: 90%;
+     right: 50px;
+     transform: translateY(-10%);
+    background: linear-gradient(135deg, #2d2c52, #221c9d); /* Gradient effect */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(190, 178, 204, 0.3);
+}
+
+/* Hover effect */
+#logout-btn:hover {
+    background: linear-gradient(135deg, #d10a1b, #e01a45);
+    transform: translateY(-50%) scale(1.2); /* Slight zoom effect */
+    box-shadow: 0px 6px 10px rgba(255, 65, 108, 0.5);
+}
+.attach-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 210px; /* Adds space between the attach icon and input */
+    position: absolute;
+    top: 90%;
+    right: 50px;
+}
+
+/* Styling the Attach Icon */
+.attach-icon {
+    font-size: 11px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effect */
+.attach-icon:hover {
+    color: #00D4FF;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+/* Theme Toggle Button */
+/* Theme Toggle Button - Move to Top Right */
+/* Theme Toggle Button - Move to Top Right */
+#theme-toggle {
+    position: absolute;
+    top: 12%;
+    right: 50px; /* Adjust position before the profile icon */
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+#theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+#theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Light Theme Styles */
+.light-mode {
+    background: #f4f4f4;
+    color: black;
+}
+
+/* Chatbox Light Mode */
+.light-mode .chat-container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Header Light Mode */
+.light-mode .chat-header {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* Chat Input Light Mode */
+.light-mode .chat-input {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Messages Light Mode */
+.light-mode .bot-message {
+    background: rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.light-mode .user-message {
+    background: #0078FF;
+    color: white;
+}
+
+/* Button Light Mode */
+.light-mode #theme-toggle {
+    border: 1px solid black;
+    color: black;
+}
+
+/* 🎤 Mic Button - Floating & Pulsing Neon Effect */
+#mic-btn {
+    position: absolute;
+    top: -75%;
+    left: 295px;
+    background: linear-gradient(135deg, #07a2c9, #493240);
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+    box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: float-mic 3s infinite ease-in-out;
+}
+
+/* 🎤 Mic Floating Animation */
+@keyframes float-mic {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* 🎤 Mic Icon */
+#mic-btn i {
+    font-size: 24px;
+}
+
+/* 🌟 Hover Effect */
+#mic-btn:hover {
+    background: linear-gradient(135deg, #493240, #ff0099);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.5);
+}
+
+/* 🔴 Listening Mode - Expanding Wavy Circular Waves */
+.listening {
+    animation: listening-waves 1.5s infinite ease-in-out;
+    background: red !important;
+    box-shadow: 0px 0px 30px rgba(255, 0, 0, 1);
+}
+
+/* 🔴 Wavy Circular Expansion */
+@keyframes listening-waves {
+    0% { box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5); }
+    50% { box-shadow: 0px 0px 25px rgba(255, 0, 0, 1); transform: scale(1.1); }
+    100% { box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5); transform: scale(1); }
+}
+
+/* 🔊 Bot Speaking - Expanding Glow & Vibrating Effect */
+.speaking {
+    animation: bot-glow-vibrate 1.2s infinite alternate;
+}
+
+/* 🔊 Expanding Glow & Vibration */
+@keyframes bot-glow-vibrate {
+    0% { transform: scale(1); opacity: 1; text-shadow: 0px 0px 5px rgba(0, 255, 0, 0.7); }
+    50% { transform: scale(1.05); opacity: 0.9; text-shadow: 0px 0px 12px rgba(0, 255, 0, 1); }
+    100% { transform: scale(1); opacity: 1; text-shadow: 0px 0px 5px rgba(0, 255, 0, 0.7); }
+}
+
+/* 💬 Chat Messages - Fade & Slide-in */
+.user-message {
+    animation: slide-user 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+.bot-message {
+    animation: slide-bot 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-80px);
+}
+
+/* 💬 Slide-in Effects */
+@keyframes slide-user {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-bot {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+}

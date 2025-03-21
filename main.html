@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APCT - AI Chatbot</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">APCT - AI Chatbot</div>
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message">Hello! How can I assist you?</div>
+        </div>
+        <div class="attach-container">
+            <input type="file" id="file-upload" hidden>
+            <label for="file-upload" class="attach-icon">
+                Attach File📎
+            </label>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-btn">➤</button>
+        </div>
+        <div class="mic-container">
+            <button id="mic-btn">🎤
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+        
+        
+    </div>    
+    <button id="logout-btn">Logout</button>   
+    <script src="main.js"></script>
+    <button id="theme-toggle">🌙</button>
+</body>
+</html>
