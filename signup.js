@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("user", JSON.stringify({ username, email, password }));
 
             alert("Signup successful! Redirecting to login...");
-            window.location.href = "1.html"; // Redirect to login page
+            window.location.href = "index.html"; // Redirect to login page
         });
     }
 });
