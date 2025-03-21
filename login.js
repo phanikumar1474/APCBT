@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Check credentials
             if (storedUser && storedUser.email === enteredEmail && storedUser.password === enteredPassword) {
                 alert(`Welcome back, ${storedUser.name}! Redirecting to main page...`);
-                window.location.href = "index.html"; // Redirect to main page
+                window.location.href = "1.html"; // Redirect to main page
             } else {
                 alert("Invalid email or password. Try again.");
             }
